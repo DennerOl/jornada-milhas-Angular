@@ -10,6 +10,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { ContainerComponent } from './shared/container/container.component';
+import { HomeComponent } from './pages/home/home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { MatButtonModule } from '@angular/material/button';
     FooterComponent,
     BannerComponent,
     CardComponent,
+    ContainerComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
