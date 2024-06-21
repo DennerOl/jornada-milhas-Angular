@@ -1,0 +1,49 @@
+<section class="modal">
+  <h1 mat-dialog-title>Viajante</h1>
+  <div class="d-flex" mat-dialog-content>
+    <div class="selecao-idade">
+      <ul>
+        <li><strong>Adultos</strong></li>
+        <li>(Acima de 12 anos)</li>
+        <li>
+          <app-botoes operacao="decrementar"></app-botoes>
+          <span>1</span>
+          <app-botoes operacao="incrementar"></app-botoes>
+        </li>
+      </ul>
+    </div>
+
+    <div class="selecao-idade">
+      <ul>
+        <li><strong>Crianças</strong></li>
+        <li>(Entre 2 e 11 anos)</li>
+        <li>
+          <app-botoes operacao="decrementar"></app-botoes>
+          <span>1</span>
+          <app-botoes operacao="incrementar"></app-botoes>
+        </li>
+      </ul>
+    </div>
+
+    <div class="selecao-idade">
+      <ul>
+        <li><strong>Bebês</strong></li>
+        <li>(Até 2 anos)</li>
+        <li>
+          <app-botoes operacao="decrementar"></app-botoes>
+          <span>1</span>
+          <app-botoes operacao="incrementar"></app-botoes>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <h2>Categoria</h2>
+  <mat-chip-set aria-label="Seleção de passagens">
+    <mat-chip selected>1 Adulto</mat-chip>
+    <mat-chip>Econômica</mat-chip>
+  </mat-chip-set>
+  <button mat-flat-button color="primary">BUSCAR</button>
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+  </div>
+</section>
