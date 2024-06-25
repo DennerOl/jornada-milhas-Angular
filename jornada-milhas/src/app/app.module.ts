@@ -1,31 +1,33 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BannerComponent } from './shared/banner/banner.component';
-import { CardComponent } from './shared/card/card.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { ContainerComponent } from './shared/container/container.component';
 import { HomeComponent } from './pages/home/home/home.component';
-import { CardBuscaComponent } from './shared/card-busca/card-busca.component';
-import { MatCardModule } from '@angular/material/card';
-import { CardDepoimentoComponent } from './shared/card-depoimento/card-depoimento.component';
-import { FormBuscaComponent } from './shared/form-busca/form-busca.component';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatIconModule } from '@angular/material/icon';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { ModalComponent } from './shared/modal/modal.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { BannerComponent } from './shared/banner/banner.component';
 import { BotoesComponent } from './shared/botoes/botoes.component';
+import { CardBuscaComponent } from './shared/card-busca/card-busca.component';
+import { CardDepoimentoComponent } from './shared/card-depoimento/card-depoimento.component';
+import { CardComponent } from './shared/card/card.component';
+import { ContainerComponent } from './shared/container/container.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { FormBuscaComponent } from './shared/form-busca/form-busca.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { ModalComponent } from './shared/modal/modal.component';
+import { PromocoesComponent } from './pages/home/home/promocoes/promocoes/promocoes.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,7 @@ import { BotoesComponent } from './shared/botoes/botoes.component';
     FormBuscaComponent,
     ModalComponent,
     BotoesComponent,
+    PromocoesComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { BotoesComponent } from './shared/botoes/botoes.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
