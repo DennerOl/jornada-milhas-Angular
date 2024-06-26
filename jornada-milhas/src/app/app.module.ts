@@ -28,6 +28,7 @@ import { FormBuscaComponent } from './shared/form-busca/form-busca.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { ModalComponent } from './shared/modal/modal.component';
 import { PromocoesComponent } from './pages/home/home/promocoes/promocoes/promocoes.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { PromocoesComponent } from './pages/home/home/promocoes/promocoes/promoc
     MatNativeDateModule,
     MatDialogModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
