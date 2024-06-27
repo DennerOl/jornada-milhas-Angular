@@ -29,6 +29,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { ModalComponent } from './shared/modal/modal.component';
 import { PromocoesComponent } from './pages/home/home/promocoes/promocoes/promocoes.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ModalComponent,
     BotoesComponent,
     PromocoesComponent,
+    DropdownUfComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatAutocompleteModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
