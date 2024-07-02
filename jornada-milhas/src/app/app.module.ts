@@ -31,6 +31,7 @@ import { PromocoesComponent } from './pages/home/home/promocoes/promocoes/promoc
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
+import { SelectorPassageiroComponent } from './shared/selector-passageiro/selector-passageiro.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf
     BotoesComponent,
     PromocoesComponent,
     DropdownUfComponent,
+    SelectorPassageiroComponent,
   ],
   imports: [
     BrowserModule,
