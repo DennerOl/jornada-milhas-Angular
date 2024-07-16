@@ -32,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
 import { SelectorPassageiroComponent } from './shared/selector-passageiro/selector-passageiro.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { SelectorPassageiroComponent } from './shared/selector-passageiro/select
     PromocoesComponent,
     DropdownUfComponent,
     SelectorPassageiroComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
