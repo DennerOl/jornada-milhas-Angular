@@ -30,7 +30,7 @@ import { ModalComponent } from './shared/modal/modal.component';
 import { PromocoesComponent } from './pages/home/home/promocoes/promocoes/promocoes.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
+import { DropdownUfComponent } from './shared/dropdown-uf/dropdown-uf.component';
 import { SelectorPassageiroComponent } from './shared/selector-passageiro/selector-passageiro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormBaseComponent } from './shared/form-base/form-base.component';
