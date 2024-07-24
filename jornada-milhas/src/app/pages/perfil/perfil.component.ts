@@ -4,6 +4,8 @@ import { TokenService } from '../core/services/token.service';
 import { CadastroService } from '../core/services/cadastro.service';
 import { FormGroup } from '@angular/forms';
 import { FormularioService } from '../core/services/formulario.service';
+import { Route, Router } from '@angular/router';
+import { UserService } from '../core/services/user.service';
 
 @Component({
   selector: 'app-perfil',
@@ -23,7 +25,9 @@ export class PerfilComponent {
   constructor(
     private tokenService: TokenService,
     private cadastroService: CadastroService,
-    private formularioService: FormularioService
+    private formularioService: FormularioService,
+    private router: Router,
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
@@ -50,7 +54,33 @@ export class PerfilComponent {
     });
   }
 
-  deslogar() {}
+  atualizar() {
+    const dadosAtualizados = {
+      nome: this.form?.value.nome,
+      nascimento: this.form?.value.nascimento,
+      cpf: this.form?.value.cpf,
+      telefone: this.form?.value.telefone,
+      email: this.form?.value.email,
+      senha: this.form?.value.senha,
+      genero: this.form?.value.genero,
+      cidade: this.form?.value.cidade,
+      estado: this.form?.value.estado,
+    };
+    this.cadastroService
+      .editarCadastro(dadosAtualizados, this.token)
+      .subscribe({
+        next: () => {
+          alert('Cadastro editado com sucesso');
+          this.router.navigate(['/']);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
+  }
 
-  atualizar() {}
+  deslogar() {
+    this.userService.logout();
+    this.router.navigate(['/login']);
+  }
 }
