@@ -17,7 +17,6 @@ export class PerfilComponent {
   textoBotao = 'Atualizar';
   perfilComponent = true;
 
-  token = '';
   nome = '';
   cadastro!: PessoaUsuaria;
   form!: FormGroup<any> | null;
@@ -31,8 +30,8 @@ export class PerfilComponent {
   ) {}
 
   ngOnInit(): void {
-    this.token = this.tokenService.retornarToken();
-    this.cadastroService.buscarCadastro(this.token).subscribe((cadastro) => {
+    this.tokenService.retornarToken();
+    this.cadastroService.buscarCadastro().subscribe((cadastro) => {
       this.cadastro = cadastro;
       this.nome = this.cadastro.nome;
       this.carregarFormulario();
@@ -66,17 +65,15 @@ export class PerfilComponent {
       cidade: this.form?.value.cidade,
       estado: this.form?.value.estado,
     };
-    this.cadastroService
-      .editarCadastro(dadosAtualizados, this.token)
-      .subscribe({
-        next: () => {
-          alert('Cadastro editado com sucesso');
-          this.router.navigate(['/']);
-        },
-        error: (err) => {
-          console.log(err);
-        },
-      });
+    this.cadastroService.editarCadastro(dadosAtualizados).subscribe({
+      next: () => {
+        alert('Cadastro editado com sucesso');
+        this.router.navigate(['/']);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 
   deslogar() {
