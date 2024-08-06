@@ -59,3 +59,40 @@ export interface Resultado {
   precoMax: number;
   resultado: Passagem[];
 }
+
+export interface DadosBusca {
+  somenteIda?: boolean;
+  passageirosAdultos?: number;
+  passageirosCriancas?: number;
+  passageirosBebes?: number;
+  tipo?: string;
+  origemId?: number;
+  destinoId?: number;
+  precoMin?: number;
+  precoMax?: number;
+  conexoes?: number;
+  tempoVoo?: number;
+  dataIda: string;
+  dataVolta?: string;
+  companhiasId?: number[];
+  pagina: number;
+  porPagina: number;
+}
+
+export interface OpcoesDeParada {
+  display: string;
+  value: string;
+}
+
+export interface Destaques {
+  maisRapida: Passagem;
+  maisBarata: Passagem;
+  sugerida: Passagem;
+}
+
+export interface Depoimento {
+  id: number;
+  texto: string;
+  autor: string;
+  avatar: string;
+}
