@@ -10,9 +10,9 @@ import { PessoaUsuaria } from 'src/app/core/types/type';
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
-  styleUrls: ['./perfil.component.scss']
+  styleUrls: ['./perfil.component.scss'],
 })
-export class PerfilComponent implements OnInit{
+export class PerfilComponent implements OnInit {
   titulo = 'Olá, ';
   textoBotao = 'ATUALIZAR';
   perfilComponent = true;
@@ -28,15 +28,15 @@ export class PerfilComponent implements OnInit{
     private formularioService: FormularioService,
     private userService: UserService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.token = this.tokenService.retornarToken();
-    this.cadastroService.buscarCadastro().subscribe(cadastro => {
+    this.cadastroService.buscarCadastro().subscribe((cadastro) => {
       this.cadastro = cadastro;
       this.nome = cadastro.nome;
       this.carregarFormulario();
-    })
+    });
   }
 
   carregarFormulario() {
@@ -64,22 +64,22 @@ export class PerfilComponent implements OnInit{
       senha: this.form?.value.senha,
       genero: this.form?.value.genero,
       cidade: this.form?.value.cidade,
-      estado: this.form?.value.estado
-    }
+      estado: this.form?.value.estado,
+    };
 
     this.cadastroService.editarCadastro(dadosAtualizados).subscribe({
       next: () => {
-        alert('Cadastro editado com sucesso')
+        alert('Cadastro editado com sucesso');
         this.router.navigate(['/']);
       },
       error: (err) => {
-        console.log(err)
-      }
-    })
+        console.log(err);
+      },
+    });
   }
 
   deslogar() {
     this.userService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['auth/login']);
   }
 }

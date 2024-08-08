@@ -7,29 +7,29 @@ import { PessoaUsuaria } from 'src/app/core/types/type';
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.scss']
+  styleUrls: ['./cadastro.component.scss'],
 })
 export class CadastroComponent {
   constructor(
     private formularioService: FormularioService,
     private cadastroService: CadastroService,
     private router: Router
-  ) { }
+  ) {}
 
   cadastrar() {
     const formCadastro = this.formularioService.getCadastro();
 
     if (formCadastro?.valid) {
       const novoCadastro = formCadastro.getRawValue() as PessoaUsuaria;
-      console.log(novoCadastro)
+      console.log(novoCadastro);
       this.cadastroService.cadastrar(novoCadastro).subscribe({
         next: (value) => {
           console.log('Cadastro realizado com sucesso', value);
-          this.router.navigate(['/login']);
+          this.router.navigate(['auth/login']);
         },
         error: (err) => {
-          console.log('Erro ao realizar cadastro', err)
-        }
+          console.log('Erro ao realizar cadastro', err);
+        },
       });
     }
   }

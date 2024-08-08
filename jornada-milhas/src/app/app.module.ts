@@ -1,22 +1,20 @@
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AutenticacaoInterceptor } from './autenticacao/autenticacao.interceptor';
-import { SharedModule } from './shared/shared.module';
+import { BuscaModule } from './busca/busca.module';
 import { MaterialModule } from './core/material/material.module';
 import { HomeModule } from './home/home.module';
-import { AutenticacaoModule } from './autenticacao/autenticacao.module';
-import { BuscaModule } from './busca/busca.module';
+import { SharedModule } from './shared/shared.module';
+import { ErroModule } from './core/erro/erro.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,14 +24,16 @@ import { BuscaModule } from './busca/busca.module';
     SharedModule,
     MaterialModule,
     HomeModule,
-    AutenticacaoModule,
-    BuscaModule
+    BuscaModule,
+    ErroModule,
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: AutenticacaoInterceptor,
-    multi: true
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AutenticacaoInterceptor,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
