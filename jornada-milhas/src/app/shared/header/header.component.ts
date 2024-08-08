@@ -1,19 +1,22 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/pages/core/services/user.service';
+import { UserService } from 'src/app/autenticacao/services/user.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  constructor(private userService: UserService, private router: Router) {}
+
+  constructor(
+    private userService: UserService,
+    private router: Router) {}
 
   user$ = this.userService.retornarUser();
 
   logout() {
     this.userService.logout();
-    this, this.router.navigate(['/login']);
+    this.router.navigate(['/login'])
   }
 }

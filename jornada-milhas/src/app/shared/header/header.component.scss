@@ -1,4 +1,9 @@
 .app-header {
+
+  button {
+    margin: 0 16px;
+  }
+
   .spacer {
     flex: 1 1 auto;
   }
@@ -9,11 +14,24 @@
     padding: 0 256px;
   }
 
-  .mat-mdc-outlined-button:not(:disabled) {
-    border-color: white;
+  .links-toolbar > * {
+    margin-right: 20px;
   }
 
-  button {
-    margin: 0 16px;
+  .links-toolbar > *:first-child {
+    margin-right: 0;
   }
+
+  img {
+    vertical-align: middle;
+  }
+
+  .mat-mdc-outlined-button:not(:disabled) {
+    border-color: #673ab7;
+    color: #673ab7;
+  }
+
 }
+
+
+

@@ -1,49 +1,39 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BuscaComponent } from './pages/busca/busca.component';
-import { CadastroComponent } from './pages/cadastro/cadastro.component';
-import { AutenticacaoInterceptor } from './pages/core/interceptors/autenticacao.interceptor';
-import { MaterialModule } from './pages/core/material/matirial.module';
-import { DepoimentosComponent } from './pages/home/depoimentos/depoimentos.component';
-import { HomeComponent } from './pages/home/home/home.component';
-import { PromocoesComponent } from './pages/home/home/promocoes/promocoes/promocoes.component';
-import { LoginComponent } from './pages/login/login.component';
-import { PerfilComponent } from './pages/perfil/perfil.component';
+import { AutenticacaoInterceptor } from './autenticacao/autenticacao.interceptor';
 import { SharedModule } from './shared/shared.module';
+import { MaterialModule } from './core/material/material.module';
+import { HomeModule } from './home/home.module';
+import { AutenticacaoModule } from './autenticacao/autenticacao.module';
+import { BuscaModule } from './busca/busca.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    PromocoesComponent,
-    LoginComponent,
-    CadastroComponent,
-    PerfilComponent,
-    BuscaComponent,
-    DepoimentosComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     SharedModule,
-    HttpClientModule,
     MaterialModule,
-    ReactiveFormsModule,
+    HomeModule,
+    AutenticacaoModule,
+    BuscaModule
   ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AutenticacaoInterceptor,
-      multi: true,
-    },
-  ],
-  bootstrap: [AppComponent],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AutenticacaoInterceptor,
+    multi: true
+  }],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
